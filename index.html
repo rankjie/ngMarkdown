@@ -5,10 +5,10 @@
 </head>
 <body ng-controller="HomeCtrl">
 
-	<demo-markdown content="mdDirective"></demo-markdown>
+	<wiz-markdown content="mdDirective"></wiz-markdown>
 	<textarea ng-model="mdDirective"></textarea>
 
-	<div ng-bind-html="mdFilter | demoMarkdownFltr"></div>
+	<div ng-bind-html="mdFilter | wizMarkdownFltr"></div>
 	<textarea ng-model="mdFilter"></textarea>
 
 	<div ng-bind-html="mdService"></div>
@@ -16,12 +16,8 @@
 
 	<script src="app/libs/angular-1.2.15/angular.js"></script>
 	<script src="app/libs/angular-1.2.15/angular-sanitize.js"></script>
-	<script src="app/libs/markdown/MarkdownDeep.js"></script>
 
-	<script src="app/components/markdown/markdown.mod.js"></script>
-	<script src="app/components/markdown/markdown.svc.js"></script>
-	<script src="app/components/markdown/markdown.fltr.js"></script>
-	<script src="app/components/markdown/markdown.dir.js"></script>
+	<script src="app/libs/wizMarkdown/wizMarkdown.min.js"></script>
 
 	<script src="app/features/home/home.mod.js"></script>
 	<script src="app/features/home/home.ctrl.js"></script>

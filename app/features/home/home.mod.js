@@ -1,3 +1,4 @@
 angular.module('demo.features.home', [
-	'demo.components.markdown'
+	'ngSanitize', // Required for markdown filter and service options
+	'wiz.markdown'
 ]);

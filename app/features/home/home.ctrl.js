@@ -1,6 +1,6 @@
 angular.module('demo.features.home')
 
-.controller('HomeCtrl', ['$scope', 'demoMarkdownSvc', function ($scope, demoMarkdownSvc) {
+.controller('HomeCtrl', ['$scope', 'wizMarkdownSvc', function ($scope, wizMarkdownSvc) {
 
 	// This will be transformed by a directive in the markup
 	$scope.mdDirective = '#Directive';
@@ -10,5 +10,5 @@ angular.module('demo.features.home')
 	$scope.mdFilter = '#Filter';
 
 	// This is transformed now and then binded to the template
-	$scope.mdService = demoMarkdownSvc.Transform('#Service');
+	$scope.mdService = wizMarkdownSvc.Transform('#Service');
 }]);
