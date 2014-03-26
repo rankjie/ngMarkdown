@@ -3,9 +3,11 @@
 <head>
 	<title>Markdown example</title>
 </head>
+
 <body ng-controller="HomeCtrl">
 
-	<wiz-markdown content="mdDirective"></wiz-markdown>
+	<h1>Displaying Markdown as HTML</h1>
+	<wiz-markdown content="mdDirective" editor="true"></wiz-markdown>
 	<textarea ng-model="mdDirective"></textarea>
 
 	<div ng-bind-html="mdFilter | wizMarkdownFltr"></div>
@@ -14,9 +16,16 @@
 	<div ng-bind-html="mdService"></div>
 	<small>2-way binding doesn't really work here without some work</small>
 
+	<hr />
+
+	<h1>Editor</h1>
+
+	<wiz-markdown content="mdEditor"></wiz-markdown>
+	<wiz-markdown-editor content="mdEditor"></wiz-markdown-editor>
+	<small>Toolbar coming soon</small>
+
 	<script src="app/libs/angular-1.2.15/angular.js"></script>
 	<script src="app/libs/angular-1.2.15/angular-sanitize.js"></script>
-
 	<script src="app/libs/wizMarkdown/wizMarkdown.min.js"></script>
 
 	<script src="app/features/home/home.mod.js"></script>
