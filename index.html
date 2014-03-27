@@ -7,7 +7,7 @@
 <body ng-controller="HomeCtrl">
 
 	<h1>Displaying Markdown as HTML</h1>
-	<wiz-markdown content="mdDirective" editor="true"></wiz-markdown>
+	<wiz-markdown content="mdDirective"></wiz-markdown>
 	<textarea ng-model="mdDirective"></textarea>
 
 	<div ng-bind-html="mdFilter | wizMarkdownFltr"></div>
