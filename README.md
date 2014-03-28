@@ -34,11 +34,22 @@ There are 4 options available to you with this plugin. In each example `mdText` 
 
     <wiz-markdown-editor content="mdText"></wiz-markdown-editor>
     
-This editor is essentially a textbox but it now has the ability to capture your formatting shortcut keys such as Ctrl+B for bold.
+The editor is essentially a textbox but it now has the ability to automatically format the markdown text via toolbar buttons.
 
-####Coming Soon
+###Toolbar
 
-The next version will include the following event hooks:
+    <wiz-markdown-editor content="mdText">
+        <wiz-toolbar-button command="bold">Bold</wiz-toolbar-button>
+        <wiz-toolbar-button command="italic">Italic</wiz-toolbar-button>
+    </wiz-markdown-editor>
+
+The editor has a toolbar that you place buttons on by adding them inside the editor.
+
+You can specify your own styling and content for each button.
+
+The toolbar is positioned above the editor by default but if you specify `toolbar="bottom"` to the editor e.g. `<wiz-markdown-editor content="mdText" toolbar="bottom">` it will appear below.
+
+####Available button commands
 
 undo,
 redo,
