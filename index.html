@@ -2,6 +2,12 @@
 <html ng-app="demo">
 <head>
 	<title>Markdown example</title>
+	<style>
+		textarea {
+			width: 300px;
+			height: 60px;
+		}
+	</style>
 </head>
 
 <body ng-controller="HomeCtrl">
@@ -14,19 +20,21 @@
 	<textarea ng-model="mdFilter"></textarea>
 
 	<div ng-bind-html="mdService"></div>
-	<small>2-way binding doesn't really work here without some work</small>
+	<small>2-way binding doesn't magically happen without some work</small>
 
 	<hr />
 
 	<h1>Editor</h1>
 
+	<wiz-markdown-editor content="mdEditor">
+		<wiz-toolbar-button command="bold">Bold</wiz-toolbar-button>
+		<wiz-toolbar-button command="italic">Italic</wiz-toolbar-button>
+	</wiz-markdown-editor>
 	<wiz-markdown content="mdEditor"></wiz-markdown>
-	<wiz-markdown-editor content="mdEditor"></wiz-markdown-editor>
-	<small>Toolbar coming soon</small>
 
 	<script src="app/libs/angular-1.2.15/angular.js"></script>
 	<script src="app/libs/angular-1.2.15/angular-sanitize.js"></script>
-	<script src="app/libs/wizMarkdown/wizMarkdown.min.js"></script>
+	<script src="app/libs/wizMarkdown/wizMarkdown.js"></script>
 
 	<script src="app/features/home/home.mod.js"></script>
 	<script src="app/features/home/home.ctrl.js"></script>
