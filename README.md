@@ -3,7 +3,7 @@
 ##Install
 
 1. Grab the `wizMarkdown.min.js` file and drop it into your application
-2. ngMarkdown required `ngSanitize` so go ahead and add a script reference to `angular-sanitize.js`
+2. ngMarkdown requires `ngSanitize` so go ahead and add a script reference to `angular-sanitize.js`
 3. Add `'wiz.markdown'` as a required module
 
 Example:
