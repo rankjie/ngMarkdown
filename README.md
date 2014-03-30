@@ -20,6 +20,10 @@ There are 4 options available to you with this plugin. In each example `mdText` 
 
     <wiz-markdown content="mdText"></wiz-markdown>
     
+> Q. Why can't you put content inside the directive?
+
+> A. It's best to bind to the element so you don't get any pre-compile flashes of the page
+    
 ##..or a filter
 
     <div ng-bind-html="mdText | wizMarkdownFltr"></div>
@@ -84,4 +88,4 @@ Highlight.js website has a good [theme test page](http://highlightjs.org/static/
 
 #Play
 
-Now have a play with an example implementation of the editor below :-)
+Now have a play by downloading the zip and running the code ;-)
