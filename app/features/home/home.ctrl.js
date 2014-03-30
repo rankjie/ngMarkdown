@@ -4,7 +4,7 @@ angular.module('demo.features.home')
 
 	$scope.mdtext = 'Loading text...';
 
-	$http.get('http://grumpywizards.com/ngMarkdown/app/features/home/home.md').then(function (data) {
-		$scope.mdtext = data;
+	$http.get('http://grumpywizards.com/ngMarkdown/app/features/home/home.md').then(function (response) {
+		$scope.mdtext = response.data;
 	});
 }]);
