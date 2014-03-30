@@ -1,139 +1,69 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+	<meta charset="utf-8">
+	<title>ngMarkdown | Grumpy Wizards</title>
+	<meta name="copyright" content="Grumpy Wizards 2014">
+	<meta name="description" content="Mardown editor for AngularJS">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/normalize.min.css">
+	<link rel="stylesheet" href="/css/grid.min.css">
+	<link rel="stylesheet" href="/css/animate.min.css">
+	<link rel="stylesheet" href="/css/base.css">
+	<link rel="stylesheet" href="/css/site.css">
+	<link rel="stylesheet" href="/css/demo.css">
+</head>
+<body ng-controller="HomeCtrl">
+	<header class="project-header grid grid-center">
+		<div class="cell cell-width-90 cell-offset-5">
+			<a href="/"><img class="project-logo" src="/img/gw.png" alt="G"></a>
+			<h1 class="project-title">ngMarkdown</h1>
+			<div class="project-description">Mardown editor for AngularJS</div>
+		</div>
+	</header>
+	<div class="content animated fadeInUp">
+		<section class="section container">
+			<div class="grid grid-medium-full">
+				<div class="section-body cell">
+					<wiz-markdown-editor content="mdEditor">
+						<wiz-toolbar-button command="bold">Bold</wiz-toolbar-button>
+						<wiz-toolbar-button command="italic">Italic</wiz-toolbar-button>
+					</wiz-markdown-editor>
+				</div>
+			</div>
+		</section>
+		<hr />
+		<section class="section container">
+			<div class="grid grid-medium-full">
+				<div class="section-body cell">
+					<wiz-markdown content="mdEditor"></wiz-markdown>
+				</div>
+			</div>
+		</section>
+		<hr />
+	</div>
+	
+	<script src="app/libs/angular-1.2.15/angular.js"></script>
+	<script src="app/libs/angular-1.2.15/angular-sanitize.js"></script>
+	<script src="app/libs/wizMarkdown/wizMarkdown.js"></script>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="ngMarkdown : AngularJS Markdown Editor" />
+	<script src="app/features/home/home.mod.js"></script>
+	<script src="app/features/home/home.ctrl.js"></script>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+	<script src="app/app.js"></script>
 
-    <title>ngMarkdown</title>
-  </head>
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  <body>
+		ga('create', 'UA-36978977-3', 'grumpywizards.com');
+		ga('send', 'pageview');
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/GrumpyWizards/ngMarkdown">View on GitHub</a>
-
-          <h1 id="project_title">ngMarkdown</h1>
-          <h2 id="project_tagline">AngularJS Markdown Editor</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/GrumpyWizards/ngMarkdown/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/GrumpyWizards/ngMarkdown/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="ngmarkdown" class="anchor" href="#ngmarkdown"><span class="octicon octicon-link"></span></a>ngMarkdown</h1>
-
-<h2>
-<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
-
-<ol>
-<li>Grab the <code>wizMarkdown.min.js</code> file and drop it into your application</li>
-<li>ngMarkdown requires <code>ngSanitize</code> so go ahead and add a script reference to <code>angular-sanitize.js</code>
-</li>
-<li>Add <code>'wiz.markdown'</code> as a required module</li>
-</ol><p>Example:</p>
-
-<pre><code>angular.module('myApp', [
-  'wiz.markdown'
-]);
-</code></pre>
-
-<h2>
-<a name="use" class="anchor" href="#use"><span class="octicon octicon-link"></span></a>Use</h2>
-
-<p>There are 4 options available to you with this plugin. In each example <code>mdText</code> is a <code>scope</code> variable that contains a markdown string.</p>
-
-<h3>
-<a name="directive" class="anchor" href="#directive"><span class="octicon octicon-link"></span></a>Directive</h3>
-
-<pre><code>&lt;wiz-markdown content="mdText"&gt;&lt;/wiz-markdown&gt;
-</code></pre>
-
-<h3>
-<a name="filter" class="anchor" href="#filter"><span class="octicon octicon-link"></span></a>Filter</h3>
-
-<pre><code>&lt;div ng-bind-html="mdText | wizMarkdownFltr"&gt;&lt;/div&gt;
-</code></pre>
-
-<h3>
-<a name="service" class="anchor" href="#service"><span class="octicon octicon-link"></span></a>Service</h3>
-
-<pre><code>&lt;div ng-bind-html="mdText"&gt;&lt;/div&gt;
-
-$scope.mdText = wizMarkdownSvc.Transform('#H1 heading');
-</code></pre>
-
-<h3>
-<a name="editor" class="anchor" href="#editor"><span class="octicon octicon-link"></span></a>Editor</h3>
-
-<pre><code>&lt;wiz-markdown-editor content="mdText"&gt;&lt;/wiz-markdown-editor&gt;
-</code></pre>
-
-<p>The editor is essentially a textbox but it now has the ability to automatically format the markdown text via toolbar buttons.</p>
-
-<h3>
-<a name="toolbar" class="anchor" href="#toolbar"><span class="octicon octicon-link"></span></a>Toolbar</h3>
-
-<pre><code>&lt;wiz-markdown-editor content="mdText"&gt;
-    &lt;wiz-toolbar-button command="bold"&gt;Bold&lt;/wiz-toolbar-button&gt;
-    &lt;wiz-toolbar-button command="italic"&gt;Italic&lt;/wiz-toolbar-button&gt;
-&lt;/wiz-markdown-editor&gt;
-</code></pre>
-
-<p>The editor has a toolbar that you place buttons on by adding them inside the editor.</p>
-
-<p>You can specify your own styling and content for each button.</p>
-
-<p>The toolbar is positioned above the editor by default but if you specify <code>toolbar="bottom"</code> to the editor e.g. <code>&lt;wiz-markdown-editor content="mdText" toolbar="bottom"&gt;</code> it will appear below.</p>
-
-<h4>
-<a name="available-button-commands" class="anchor" href="#available-button-commands"><span class="octicon octicon-link"></span></a>Available button commands</h4>
-
-<p>undo,
-redo,
-bold,
-italic,
-heading,
-code,
-ullist,
-ollist,
-indent,
-outdent,
-link,
-img,
-hr,
-h0,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-tab,
-untab</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">ngMarkdown maintained by <a href="https://github.com/GrumpyWizards">GrumpyWizards</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+	</script>
+</body>
 </html>
