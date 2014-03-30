@@ -1,6 +1,6 @@
 #ngMarkdown
 
-##Install
+#Install it
 
 1. Grab the `wizMarkdown.min.js` file and drop it into your application
 2. ngMarkdown requires `ngSanitize` so go ahead and add a script reference to `angular-sanitize.js`
@@ -12,31 +12,31 @@ Example:
       'wiz.markdown'
     ]);
 
-##Use
+#Use it
 
 There are 4 options available to you with this plugin. In each example `mdText` is a `scope` variable that contains a markdown string.
 
-###Directive
+##Display output using a directive
 
     <wiz-markdown content="mdText"></wiz-markdown>
     
-###Filter
+##..or a filter
 
     <div ng-bind-html="mdText | wizMarkdownFltr"></div>
     
-###Service
+##..or a service
 
     <div ng-bind-html="mdText"></div>
     
     $scope.mdText = wizMarkdownSvc.Transform('#H1 heading');
 
-###Editor
+#Editor
 
     <wiz-markdown-editor content="mdText"></wiz-markdown-editor>
     
 The editor is essentially a textbox but it now has the ability to automatically format the markdown text via toolbar buttons.
 
-###Toolbar
+##Toolbar
 
     <wiz-markdown-editor content="mdText">
         <wiz-toolbar-button command="bold">Bold</wiz-toolbar-button>
@@ -49,7 +49,7 @@ You can specify your own styling and content for each button.
 
 The toolbar is positioned above the editor by default but if you specify `toolbar="bottom"` to the editor e.g. `<wiz-markdown-editor content="mdText" toolbar="bottom">` it will appear below.
 
-####Available button commands
+###Available button commands
 
 undo,
 redo,
@@ -73,3 +73,15 @@ h5,
 h6,
 tab,
 untab
+
+#Syntax highlighting
+
+[highlight.js](http://highlightjs.org/) is built in so all you need to do is pick a theme and drop the css link in the head of your webpage e.g.
+
+    <link href="http://yandex.st/highlightjs/8.0/styles/github.min.css" rel="stylesheet" type="text/css">
+
+Highlight.js website has a good [theme test page](http://highlightjs.org/static/test.html) that you should find useful.
+
+#Play
+
+Now have a play with an example implementation of the editor below :-)
