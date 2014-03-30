@@ -80,7 +80,7 @@ untab
 
 [highlight.js](http://highlightjs.org/) is built in so all you need to do is pick a theme and drop the css link in the head of your webpage e.g.
 
-    <link rel="stylesheet" type="text/css" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
+    <link href="http://yandex.st/highlightjs/8.0/styles/github.min.css" rel="stylesheet" type="text/css">
 
 Highlight.js website has a good [theme test page](http://highlightjs.org/static/test.html) that you should find useful.
 
