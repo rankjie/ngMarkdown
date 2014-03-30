@@ -60,12 +60,32 @@
 			</div>
 		</section>
 		<hr />
-		<section class="section container">
+		<section class="section container" ng-show="mdtext">
 			<div class="grid grid-medium-full">
 				<div class="section-body cell">
 					<wiz-markdown-editor content="mdtext">
-						<wiz-toolbar-button command="bold">Bold</wiz-toolbar-button>
-						<wiz-toolbar-button command="italic">Italic</wiz-toolbar-button>
+						<wiz-toolbar-button command="undo">undo</wiz-toolbar-button>
+						<wiz-toolbar-button command="redo">redo</wiz-toolbar-button>
+						<wiz-toolbar-button command="bold">bold</wiz-toolbar-button>
+						<wiz-toolbar-button command="italic">italic</wiz-toolbar-button>
+						<wiz-toolbar-button command="heading">heading</wiz-toolbar-button>
+						<wiz-toolbar-button command="code">code</wiz-toolbar-button>
+						<wiz-toolbar-button command="ullist">ullist</wiz-toolbar-button>
+						<wiz-toolbar-button command="ollist">ollist</wiz-toolbar-button>
+						<wiz-toolbar-button command="indent">indent</wiz-toolbar-button>
+						<wiz-toolbar-button command="outdent">outdent</wiz-toolbar-button>
+						<wiz-toolbar-button command="link">link</wiz-toolbar-button>
+						<wiz-toolbar-button command="img">img</wiz-toolbar-button>
+						<wiz-toolbar-button command="hr">hr</wiz-toolbar-button>
+						<wiz-toolbar-button command="h0">h0</wiz-toolbar-button>
+						<wiz-toolbar-button command="h1">h1</wiz-toolbar-button>
+						<wiz-toolbar-button command="h2">h2</wiz-toolbar-button>
+						<wiz-toolbar-button command="h3">h3</wiz-toolbar-button>
+						<wiz-toolbar-button command="h4">h4</wiz-toolbar-button>
+						<wiz-toolbar-button command="h5">h5</wiz-toolbar-button>
+						<wiz-toolbar-button command="h6">h6</wiz-toolbar-button>
+						<wiz-toolbar-button command="tab">tab</wiz-toolbar-button>
+						<wiz-toolbar-button command="untab">untab</wiz-toolbar-button>
 					</wiz-markdown-editor>
 				</div>
 			</div>
