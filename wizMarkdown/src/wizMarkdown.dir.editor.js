@@ -13,7 +13,7 @@
 								'<textarea class="markdown-input" ng-model="content"></textarea>' +
 								'<div class="markdown-toolbar" ng-if="toolbarBottom" ng-transclude></div>' +
 							'</div>',
-		controller: function ($scope, $element, $attrs) { },
+		controller: ['$scope', '$element', '$attrs', function ($scope, $element, $attrs) { }],
 		link: function (scope, elem, attrs, ctrl) {
 			var editor = new MarkdownDeepEditor.Editor(elem.find('textarea')[0], null);
 			// TODO: these settings need removing in next version
