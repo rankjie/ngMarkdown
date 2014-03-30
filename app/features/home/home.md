@@ -1,5 +1,3 @@
-So many sites use **Markdown** (mainly because it's awesome!), so why not see how we could integrate a markdown solution into an [Angular](http://angularjs.org/) app? This is my take on it, hopefully you'll see that it is flexible and de-coupled. Download the zip and run the webpage and see how easy it is to use. This plugin uses [MarkdownDeep](http://www.toptensoftware.com/markdowndeep/) behind the scenes. 
-
 > **Psst**. This page is written in markdown and the contents is loaded into the editor. Scroll to the bottom and change this page's content using the editor.
 
 ---
