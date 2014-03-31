@@ -1,6 +1,6 @@
 ﻿angular.module('wiz.markdown')
 
-.directive('wizMarkdownEditor', function () {
+.directive('wizMarkdownEditor', ['$timeout', function ($timeout) {
 	return {
 		restrict: 'E',
 		scope: {
@@ -16,15 +16,14 @@
 		controller: ['$scope', '$element', '$attrs', function ($scope, $element, $attrs) { }],
 		link: function (scope, elem, attrs, ctrl) {
 			var editor = new MarkdownDeepEditor.Editor(elem.find('textarea')[0], null);
-			// TODO: these settings need removing in next version
-			editor.disableShortCutKeys = true; 
-			editor.disableTabHandling = true;
 			editor.onPostUpdateDom = function (editor) {
-				scope.content = elem.find('textarea').val();
+				$timeout(function () {
+					scope.content = elem.find('textarea').val();
+				});
 			};
 			scope.toolbarBottom = attrs.toolbar === 'bottom';
 			// Exposes editor to other directives
 			ctrl.editor = editor;
 		}
 	};
-});
+}]);
