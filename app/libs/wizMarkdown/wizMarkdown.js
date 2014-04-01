@@ -5833,7 +5833,7 @@ angular.module('wiz.markdown')
             scope.$watch('content', function () {
                 elem.html(wizMarkdownSvc.Transform(scope.content));
                 // Apply highlighting when required
-                angular.forEach(elem.find('pre'), function(value){
+                angular.forEach(elem.find('code'), function(value){
                     hljs.highlightBlock(value);
                 });
             });
@@ -5851,10 +5851,10 @@ angular.module('wiz.markdown')
 		replace: true,
 		transclude: true,
 		template: '<div class="markdown-editor">' +
-								'<div class="markdown-toolbar" ng-if="!toolbarBottom" ng-transclude></div>' +
-								'<textarea class="markdown-input" ng-model="content"></textarea>' +
-								'<div class="markdown-toolbar" ng-if="toolbarBottom" ng-transclude></div>' +
-							'</div>',
+		            '<div class="markdown-toolbar" ng-if="!toolbarBottom" ng-transclude></div>' +
+		            '<textarea class="markdown-input" ng-model="content"></textarea>' +
+		            '<div class="markdown-toolbar" ng-if="toolbarBottom" ng-transclude></div>' +
+		          '</div>',
 		controller: ['$scope', '$element', '$attrs', function ($scope, $element, $attrs) { }],
 		link: function (scope, elem, attrs, ctrl) {
 			var editor = new MarkdownDeepEditor.Editor(elem.find('textarea')[0], null);
@@ -5869,6 +5869,7 @@ angular.module('wiz.markdown')
 		}
 	};
 }]);
+
 angular.module('wiz.markdown')
 
 .directive('wizToolbarButton', function () {
