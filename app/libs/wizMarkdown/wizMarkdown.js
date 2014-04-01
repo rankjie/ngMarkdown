@@ -5833,7 +5833,7 @@ angular.module('wiz.markdown')
             scope.$watch('content', function () {
                 elem.html(wizMarkdownSvc.Transform(scope.content));
                 // Apply highlighting when required
-                angular.forEach(elem.find('code'), function(value){
+                angular.forEach(elem.find('pre'), function(value){
                     hljs.highlightBlock(value);
                 });
             });
